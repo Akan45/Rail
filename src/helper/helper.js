@@ -41,13 +41,13 @@ export async function getUser({ username }){
 // register user function
 export async function registerUser(credentials){
     try{
-       console.log('Credentials:', credentials);
+       //console.log('Credentials:', credentials);
        const { data: { msg }, status } = await axios.post('http://localhost:5000/api/auth/register', credentials, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
-      console.log("hello",{ data: { msg }, status })
+      //console.log("hello",{ data: { msg }, status })
        let {username, email} = credentials;
 
     // //    sendmail
@@ -61,6 +61,46 @@ export async function registerUser(credentials){
         return Promise.reject({error});
     }
 }
+
+
+
+// export async function registerUser(credentials) {
+//     try {
+//         console.log('Credentials:', credentials);
+//         const response = await axios.post('http://localhost:5000/api/auth/register', credentials, {
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             }
+//         });
+
+//         const { data: { msg }, status } = response;
+//         console.log("Response:", { msg, status });
+
+//         let { username, email } = credentials;
+
+//         // Uncomment to send mail if needed
+//         // if (status === 201) {
+//         //     await axios.post('http://localhost:5000/api/auth/registerMail', { username, userEmail: email, text: msg });
+//         // }
+
+//         return Promise.resolve(msg);
+//     } catch (error) {
+//         if (error.response) {
+//             // The request was made and the server responded with a status code outside of the 2xx range
+//             console.error("Server responded with an error:", error.response.data);
+//             console.error("Status code:", error.response.status);
+//             return Promise.reject({ error: error.response.data });
+//         } else if (error.request) {
+//             // The request was made but no response was received
+//             console.error("No response received:", error.request);
+//             return Promise.reject({ error: "No response received from server" });
+//         } else {
+//             // Something happened in setting up the request that triggered an error
+//             console.error("Error setting up request:", error.message);
+//             return Promise.reject({ error: error.message });
+//         }
+//     }
+// }
 
 //login function
 export async function verifyPassword({email , password}){

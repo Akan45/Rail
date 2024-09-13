@@ -69,7 +69,7 @@ const [{ isLoading: fetchLoading, apiData, serverError }] = useFetch(auth.userna
   //console.log("username after successful login", auth.username);
   if (loading) return <Loader />; // Display loader if form submission is in progress
   if (fetchLoading) return <h1 className="text-2xl font-bold">Loading...</h1>;
-  if (serverError) return <h1 className="text-xl text-red-500">{serverError.message}</h1>; 
+  // if (serverError) return <h1 className="text-xl text-red-500">{serverError.message}</h1>; 
 
 return (
     <>

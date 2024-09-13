@@ -1,20 +1,3 @@
-// import  { create } from 'zustand';
-
-// export const useAuthStore = create((set) => ({
-//   auth: {
-//     username: '',
-//     active: false,
-//   },
-//   setAuth: (auth) => set({ auth }),
-//   setUsername: (name) => set((state) => ({
-//     auth: { ...state.auth, username: name },
-//   })),
-//   setActive: (isActive) => set((state) => ({
-//     auth: { ...state.auth, active: isActive },
-//   })),
-// }));
-
-
 import { create } from 'zustand';
 
 export const useAuthStore = create((set) => ({

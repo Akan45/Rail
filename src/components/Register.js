@@ -42,7 +42,7 @@ const Register = () => {
     onSubmit: async (values) => {
       // console.log('Form is submitting...'); 
       values = await Object.assign(values, { profile: file || '' });
-      console.log('Form values:', values);
+      //console.log('Form values:', values);
       let registerPromise = registerUser(values);
       
       toast.promise(registerPromise, {
@@ -99,7 +99,7 @@ const Register = () => {
 
   return (
     <>
-      <GoogleOAuthProvider clientId="399095721277-gjvnk7v913vskelfa9kl170btoqec0fa.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={process.env.GOOGLE_CLIENT_ID}>
         {loading && <Loader />}
         <div
           id="register"
