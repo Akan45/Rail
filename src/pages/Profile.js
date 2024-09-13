@@ -74,7 +74,7 @@ export default function Profile() {
 
   if (loading) return <Loader />; // Display loader if form submission is in progress
   if (fetchLoading) return <h1 className="text-2xl font-bold">Loading...</h1>;
-  if (serverError) return <h1 className="text-xl text-red-500">{serverError.message}</h1>; 
+  //if (serverError) return <h1 className="text-xl text-red-500">{serverError.message}</h1>; 
 
   const handleProfileImageClick = () => {
     fileInputRef.current.click();
